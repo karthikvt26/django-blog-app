@@ -1,30 +1,24 @@
-Simple blog application using Django
-====================================
+## Simple blog application using Django
 
-Setup
------
+### Setup
 
 ```
 pip install -r requirements.txt
 ```
 
-Configure postgres
-^^^^^^^^^^^^^^^^^^
+#### Configure postgres
 
 Install postgres using [docker](https://docs.docker.com/samples/library/postgres/) or from the [source](https://www.postgresql.org/download/)
 
 Update settings.py with the correct postgres connection values.
 
-Apply migrations
-^^^^^^^^^^^^^^^^
+#### Apply migrations
 
 Run `python manage.py migrate` to create appropriate tables in the database.
 
-Testing
--------
+### Testing
 
-Fetch all articles
-^^^^^^^^^^^^^^^^^^
+#### Fetch all articles
 
 ```
   curl http://localhost:8000/articles -H "Authorization: Bearer 70kc8b75ca68amj3xwrayqvy9j46yzr" -H 'Content-Type: application/json'
@@ -41,8 +35,7 @@ Fetch all articles
 ]
 ```
 
-Fetch articles owned by the specific author
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#### Fetch articles owned by the specific author
 
 ```
   curl  http://localhost:8000/author/articles -H "Authorization: Bearer 70kc8b75ca68amj3xwrayqvy9j46yzrf" -H 'Content-Type: application/json'

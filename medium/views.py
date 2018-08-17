@@ -43,9 +43,13 @@ def userLogin(request):
 
 def inspectUser(request):
     if ( request.user.is_authenticated ):
-        return HttpResponse('Logged in user: ' + request.user.username)
+        responseObj = {
+            'x-hasura-role': 'user',
+            'x-hasura-user-id': request.user.id
+        }
+        return HttpResponse(json.dumps(responseObj))
     else:
-        return HttpResponse('User not logged in', status=403)
+        return HttpResponse('User not logged in', status=401)
 
 def getUserArticles(request):
     """

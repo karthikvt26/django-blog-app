@@ -25,7 +25,7 @@ SECRET_KEY = 'fk4n(onf*d(nuyb@jis6r_g_t2#_qgywszr+n&kc1-zhp@rs06'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SESSION_COOKIE_NAME='mediumsessioninfo'
 
